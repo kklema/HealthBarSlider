@@ -16,9 +16,15 @@ public class Player : MonoBehaviour
         _currentHP = _maxHP / 2;
     }
 
-    public void ChangeCurrentHealth(int value)
+    public void IncreaseCurrentHealth(int value)
     {
         _currentHP += value;
+        HealthChanged?.Invoke(_currentHP);
+    }
+
+    public void DeacreseCurrentHealth(int value)
+    {
+        _currentHP -= value;
         HealthChanged?.Invoke(_currentHP);
     }
 }

@@ -10,11 +10,11 @@ public class HealthChanger : MonoBehaviour
 
     public void IncreaseHealth()
     {
-        _player.ChangeCurrentHealth(_increaseValue);
+        _player.IncreaseCurrentHealth(_increaseValue);
     }
 
     public void DecreaseHealth()
     {
-        _player.ChangeCurrentHealth(-_deacreseValue);
+        _player.DeacreseCurrentHealth(_deacreseValue);
     }
 }

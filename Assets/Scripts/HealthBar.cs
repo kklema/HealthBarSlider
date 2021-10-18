@@ -11,7 +11,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private HealthChanger _healthChanger;
     [SerializeField] private TMP_Text _text;
 
-    [SerializeField] private float _changeSpeed;
+    [SerializeField] private float _fillSpeed;
 
     private Slider _sliderHP;
 
@@ -50,16 +50,11 @@ public class HealthBar : MonoBehaviour
 
     private IEnumerator FillingBar()
     {
-        float counter = 0;
-        
-        while (counter < _changeSpeed)
+        while (_sliderHP.value != _player.CurrentHP)
         {
-            _sliderHP.value = Mathf.MoveTowards(_sliderHP.value, _player.CurrentHP, _changeSpeed);
-            counter += Time.deltaTime;
+            _sliderHP.value = Mathf.MoveTowards(_sliderHP.value, _player.CurrentHP, _fillSpeed);
 
             yield return null;
         }
-
-        _sliderHP.value = _player.CurrentHP;
     }
 }

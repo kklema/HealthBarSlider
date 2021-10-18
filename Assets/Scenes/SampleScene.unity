@@ -900,7 +900,7 @@ MonoBehaviour:
   _player: {fileID: 1897452270}
   _healthChanger: {fileID: 647692113}
   _text: {fileID: 427286620}
-  _changeSpeed: 0.1
+  _fillSpeed: 0.25
 --- !u!1 &729122167
 GameObject:
   m_ObjectHideFlags: 0
